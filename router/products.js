@@ -36,7 +36,6 @@ router.post("/", admin, async (req, res) => {
     const prods = await products.getAll()
     const prod = await products.getById(prods[prods.length - 1].id)
     res.status(201).send(prod);
-
 });
 
 router.put("/:id", admin, async (req, res) => {

@@ -11,6 +11,10 @@ app.use(express.static('./public'))
 app.use('/api/productos/', products)
 app.use('/api/carrito/', cart)
 
+app.get('*', (req, res) => {
+    res.json({res: 'no se puede acceder a esta ruta'})
+})
+
 const PORT = 8080;
 
 const server = app.listen(PORT, () => {

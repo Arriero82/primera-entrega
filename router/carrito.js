@@ -42,8 +42,7 @@ cartRouter.post("/:id/productos/", async (req, res) => {
 }); 
 
 cartRouter.delete("/:id/productos/:id_prod", async (req, res) => {
-    const { id } = req.params;  
-    const { id_prod } = req.params; 
+    const { id, id_prod } = req.params;  
     const cart = await carts.getById(id);
     let prodId = cart[0].productos.findIndex(productos => productos.id == id_prod);
     cart[0].productos.splice(prodId,1)   
